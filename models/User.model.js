@@ -20,6 +20,9 @@ const userSchema = new Schema(
     },
     imageUrl:{
       type: String
+    },
+    phoneNumber:{
+      type:Number
     }
   },
   {
