@@ -27,6 +27,9 @@ app.use("/posts", postsRoutes);
 const userRoutes = require("./routes/users.routes");
 app.use("/users", userRoutes);
 
+const uploadRoutes = require("./routes/upload.routes");
+app.use("/upload", uploadRoutes)
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
