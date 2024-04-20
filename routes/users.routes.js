@@ -6,8 +6,8 @@ const { isAuthenticated } = require("../middleware/jwt.middleware");
 router.get("/", isAuthenticated, (req, res, next ) => {
   const userId = req.payload._id;
   User.findById(userId)
-  .then((foundUser = {}) => {
-    const { _id, name, phoneNumber, imageUrl} = foundUser;
+  .then((foundUser) => {
+    const { _id, name, phoneNumber, imageUrl} = foundUser || {};
     const resPayload = { _id, name, phoneNumber,imageUrl};
     res.json(resPayload);
   })
